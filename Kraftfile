@@ -1,0 +1,22 @@
+spec: v0.6
+
+name: ocaml-example
+
+unikraft:
+  version: staging
+
+targets:
+- plat: qemu
+  arch: x86_64
+
+# TODO: posix-socket, liblwip
+libraries:
+  musl:
+    version: staging
+  lwip:
+    version: staging
+  ocaml-posix:
+    source: ../uk-ocaml-posix
+    version: staging
+    kconfig:
+      CONFIG_LIBOCAMLPOSIX: "y"
