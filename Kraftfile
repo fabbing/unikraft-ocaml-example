@@ -1,0 +1,19 @@
+spec: v0.6
+
+name: ocaml-example
+
+unikraft:
+  version: staging
+
+targets:
+- plat: linuxu
+  arch: x86_64
+
+libraries:
+  musl:
+    version: staging
+  ocaml-posix:
+    source: https://github.com/fabbing/uk-ocaml-posix.git
+    version: staging
+    kconfig:
+      CONFIG_LIBOCAMLPOSIX: "y"

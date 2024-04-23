@@ -1,14 +1,6 @@
+$(eval $(call addlib,appocamlmain))
 
-$(eval $(call addlib,apphelloocaml))
+#APPOCAMLMAIN_SRCS-y += $(APPOCAMLMAIN_BASE)/src/main.c
+APPOCAMLMAIN_OBJS-y += $(APPOCAMLMAIN_BASE)/src/main.exe.o
 
-LIBS := $(UK_LIBS)/gcc:$(UK_LIBS)/pthread-embedded:$(UK_LIBS)/newlib:$(UK_LIBS)/ocaml
-
-APPHELLOOCAML_SRCS-y += $(APPHELLOOCAML_BASE)/main.c
-APPHELLOOCAML_OBJS-y += $(APPHELLOOCAML_BASE)/_build/default/src/program.exe.o
-
-.PHONY: 
-$(APPHELLOOCAML_BASE)/_build/default/src/program.exe.o: $(APPHELLOOCAML_BASE)/src/dune $(APPHELLOOCAML_BASE)/src/program.ml $(APPHELLOOCAML_BASE)/src/stubs.c
-	cd $(APPHELLOOCAML_BASE) && \
-		CFLAGS="$(CFLAGS) $(CFLAGS-y) $(CINCLUDES) $(CINCLUDES-y)" \
-		dune build src/
-
+# TODO use dune to build output-obj!

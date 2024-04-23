@@ -1,1 +1,0 @@
-void secure_getenv() {}
