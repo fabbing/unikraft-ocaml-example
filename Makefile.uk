@@ -1,6 +1,6 @@
 $(eval $(call addlib,appocamlmain))
 
 #APPOCAMLMAIN_SRCS-y += $(APPOCAMLMAIN_BASE)/src/main.c
-APPOCAMLMAIN_OBJS-y += $(APPOCAMLMAIN_BASE)/src/main.exe.o
+APPOCAMLMAIN_OBJS-y += $(APPOCAMLMAIN_BASE)/_build/default/src/main.exe.o
 
 # TODO use dune to build output-obj!
